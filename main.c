@@ -79,10 +79,10 @@ int main() {
 
     // Some clients don't send EOF
     // So need to find content length
-    int content_length = read_header(cd);
+    /* int content_length = read_header(cd); */
 
     // Ignore dat body
-    for (char c; content_length -- > 0; read(cd, &c, 1));
+    /* for (char c; content_length -- > 0; read(cd, &c, 1)); */
 
     // dubm response here I come
     write(cd, response, sizeof(response));
