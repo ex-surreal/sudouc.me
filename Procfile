@@ -1,1 +1,1 @@
-web: sudouc.me
+web: ./main
