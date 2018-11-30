@@ -1,2 +1,3 @@
 FROM gcc
-RUN gcc ./main.c -o ./main
+ADD . .
+RUN gcc main.c -o main
