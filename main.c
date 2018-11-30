@@ -18,10 +18,12 @@
 #define DUMB_RESPONSE "HTTP/1.1 200 OK\nContent-Type: text/html\n\nHi there! I am a dumb web server\n"
 #endif
 
-int main(int argc, char * argv[]) {
-  // I need port
-  if (argc <= 1) return EINVAL;
-  int port = atoi(argv[1]);
+int main() {
+  // Heroku needs to get port from env
+  char * PORT = getenv("PORT");
+  if (errno) return errno;
+  if (PORT == NULL) return EINVAL;
+  int port = atoi(PORT);
   if (errno) return errno;
 
   // Open up socket; ref: socket(2)
